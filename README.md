@@ -7,11 +7,14 @@ Example of blockchain application with Solidity
 - Install `metamask` extension in your browser: https://metamask.io/
 
 ## Truffle commands to use
-- `truffle migrate` -> execute migrations files
+- `truffle compile` -> compiles contracts
+- `truffle migrate [--reset]` -> execute migrations files
 - `truffle console` -> opens truffle console
     - Commands to check the contract
         - `todoList = await TodoList.deployed()`
         - `taskCount = await todoList.taskCount()`
         - `taskCount.toNumber()`
+    - When we have created at least one task
+        - `task = todoList.tasks(1)`
+        - `task`
 
-        
