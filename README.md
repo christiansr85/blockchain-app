@@ -2,7 +2,7 @@
 Example of blockchain application with Solidity
 
 ## Steps to configure environment
-- Download and install/execute local blockchain netwrok from https://www.trufflesuite.com/ganache
+- Download and install/execute local blockchain network from https://www.trufflesuite.com/ganache
 - Install `truffle` npm dependency: `npm i -g truffle@5.0.2`
 - Install `metamask` extension in your browser: https://metamask.io/
 
@@ -18,3 +18,7 @@ Example of blockchain application with Solidity
         - `task = todoList.tasks(1)`
         - `task`
 
+## Web application
+- Here we are going to interact with `metamask` browser's plugin.
+    - Make sure you are connected to the development network created by `truffle ganache` application.
+    - Import an account using the first private key from the ganache development server keys.
