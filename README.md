@@ -22,3 +22,8 @@ Example of blockchain application with Solidity
 - Here we are going to interact with `metamask` browser's plugin.
     - Make sure you are connected to the development network created by `truffle ganache` application.
     - Import an account using the first private key from the ganache development server keys.
+
+## Testing
+We are using `Mocha` along with `Chai.js`.
+
+Just type `truffle test` from the terminal command line to run the tests.

@@ -69,7 +69,35 @@ const App = {
         // Render account in the web
         $('#account').html(App.account);
 
+        await App.renderTasks();
+
         App.setLoading(false);
+    },
+
+    renderTasks: async () => {
+        const taskCount = await App.todoList.taskCount();
+        const $taskTemplate = $('.taskTemplate');
+
+        for (let i = 1; i <= taskCount; i++) {
+            const task = await App.todoList.tasks(i);
+            const [_taskId, taskContent, taskCompleted] = task;
+            const taskId = _taskId.toNumber();
+
+            const $newTaskTemplate = $taskTemplate.clone();
+            $newTaskTemplate.find('.content').html(taskContent);
+            $newTaskTemplate.find('input')
+                            .prop('name', taskId)
+                            .prop('checked', taskCompleted)
+                            // .on('click', App.toggleCompleted)
+
+            if (taskCompleted) {
+                $('#completedTaskList').append($newTaskTemplate);
+            } else {
+                $('#taskList').append($newTaskTemplate);
+            }
+
+            $newTaskTemplate.show();
+        }
     },
 
     setLoading: (loading) => {
