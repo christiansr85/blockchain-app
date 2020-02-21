@@ -100,6 +100,15 @@ const App = {
         }
     },
 
+    createTask: async () => {
+        App.setLoading(true);
+        const content = $('#newTask').val();
+        await App.todoList.createTask(content);
+
+        // TODO: Improve to display the task in the view
+        window.location.reload();
+    },
+
     setLoading: (loading) => {
         App.loading = loading;
         const loader = $('#loader');
