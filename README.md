@@ -23,6 +23,12 @@ Example of blockchain application with Solidity
     - Make sure you are connected to the development network created by `truffle ganache` application.
     - Import an account using the first private key from the ganache development server keys.
 
+You need to install the app dependencies as well. Just type `npm i` in the directory where the `package.json` 
+file is placed.
+
+In order to run the web client, just execute the `npm run dev` command. This will launch the `lite-server` and you'll be
+able to play with the tasks manager example.
+
 ## Testing
 We are using `Mocha` along with `Chai.js`.
 
